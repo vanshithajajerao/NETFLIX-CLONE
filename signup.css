@@ -1,0 +1,128 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Fallback color if image doesn't load */
+    background-image: url('https://i.redd.it/zjgs096khv591.jpg'); /* Replace with your image URL */
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents repeating the image */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Necessary for absolute positioning of logo */
+}
+
+/* Logo Styling */
+.logo-container {
+    position: absolute;  /* Positioned outside the form */
+    top: 10px;
+    left: 10px;
+    z-index: 10; /* Make sure logo is above other elements */
+}
+
+.logo-container img {
+    width: 150px; /* Adjust size of the logo */
+    height: auto;
+}
+
+/* Sign-Up Container */
+.signup-container {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem auto;
+    background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent dark background for the form */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Title and Description */
+.signup-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.signup-container p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+}
+
+/* Form Input Fields */
+.signup-container input[type="email"],
+.signup-container input[type="password"],
+.signup-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Submit Button */
+.signup-container button {
+    width: 100%;
+    padding: 15px;
+    background-color: #e50914;
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signup-container button:hover {
+    background-color: #f40612;
+}
+
+/* Footer Section */
+.signup-container .footer {
+    margin-top: 1.5rem;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.signup-container .footer a {
+    color: #ccc;
+    text-decoration: underline;
+}
+
+.signup-container .footer a:hover {
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .signup-container {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .signup-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .signup-container p {
+        font-size: 1rem;
+    }
+
+    .signup-container button {
+        font-size: 1rem;
+    }
+}

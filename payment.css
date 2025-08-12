@@ -1,0 +1,311 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header.showcase {
+    position: relative;
+    height: 100vh; /* Increased height to make the background cover more space */
+    background: url('https://i.redd.it/zjgs096khv591.jpg') no-repeat center center/cover;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .logo img {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 150px;
+    height: 100px;
+}
+
+/* Showcase Content Styling */
+.showcase-content {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
+    width: 30%; /* Adjust width to fit the screen */
+    max-width: 450px; /* Maximum width to prevent excessive stretching */
+    min-width: 100px;
+    height: 475px;  /* The height will adjust based on content (default behavior) */
+    min-height: 200px;
+    margin: 4rem auto; /* Ensure readability on smaller screens */
+    margin-top: 3rem; /* Create gap between the Netflix logo and payment container */
+    margin-bottom: 2rem;
+    
+    position: relative;
+    overflow: hidden;
+}
+
+/* Payment Form */
+.formm {
+    margin-top: 1rem;
+}
+
+.formm h1 {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    font-weight: bold;
+}
+
+.sub-heading {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+/* Payment Details Styling */
+.info label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.info input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    background: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.info .error {
+    color: red;
+    font-size: 0.8rem;
+}
+
+/* Payment Button */
+.btn {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #e50914;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #f40612;
+}
+
+/* Terms Section */
+.more {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.more a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Footer Section */
+footer {
+    background-color: #111;
+    padding: 1.5rem 1rem; /* Increased padding for better spacing */
+    text-align: center;
+    color: #fff;
+    margin-top: 0.5rem;
+}
+
+footer .ftr-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem; /* Adjusted gap for proper spacing */
+    margin-top: 1rem;
+}
+
+/* Align links in the footer */
+footer .ftr-content a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1rem; /* Slightly smaller font size */
+    transition: color 0.3s ease;
+}
+
+footer .ftr-content a:hover {
+    color: #e50914; /* Maintain hover effect */
+}
+
+footer .select select {
+    background-color: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+footer .select select:hover {
+    background-color: #444; /* Light hover effect for select */
+}
+
+/* Adjusting footer sections to center them */
+footer .gift-cards,
+footer .terms {
+    flex: 1 1 45%; /* Equal flex for gift cards and terms sections */
+    text-align: center;
+}
+
+footer .gift-cards a,
+footer .terms a {
+    color: #ccc;
+    text-decoration: underline;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+footer .gift-cards a:hover,
+footer .terms a:hover {
+    color: #e50914;
+}
+
+footer .more {
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+footer .more a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Centering "Questions? Contact us" */
+footer .contact {
+    flex: 0 0 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: -1rem; /* Reduced margin-top to move it up */
+}
+
+footer .contact a {
+    color: #ccc;
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
+/* Align Gift Cards, Terms, and Language */
+footer .ftr-content {
+    justify-content: center;
+}
+
+footer .select {
+    width: 100%; /* Ensure the language selector takes full width */
+    text-align: center;
+    margin-top: 1rem;
+}
+
+footer .select select {
+    width: 105px; /* Adjust width of the select box */
+    margin: 0 auto; /* Center align the select box */
+}
+
+/* Specific adjustments for Gift Cards and Terms in Footer */
+footer .gift-cards,
+footer .terms {
+    margin-top: 1rem;
+    text-align: center; /* Center align the Gift Cards and Terms */
+}
+
+footer .gift-cards a,
+footer .terms a {
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+footer .gift-cards a:hover,
+footer .terms a:hover {
+    color: #e50914;
+}
+/* Error message style */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none; /* Hide error messages initially */
+}
+
+/* Style for disabled button */
+.btn-primary:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+/* Ensure the input fields have enough space for the error messages */
+.info label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Position error messages above the input fields */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 5px; /* Space above the input fields */
+    display: none; /* Hide error messages initially */
+}
+
+/* Style for the input fields */
+.info input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px; /* Space for error messages */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Style for the Pay Now button */
+.btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-primary:hover {
+    background-color: #f40612;
+}

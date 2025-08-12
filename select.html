@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="select.css">
+    <title>Select Plan - Netflix Payment</title>
+</head>
+<body>
+    <header class="showcase">
+        <div class="logo">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240313101431/Netflix-Logo.png" alt="Netflix Logo">
+        </div>
+        <div class="showcase-content">
+            <div class="formm">
+                <form id="plan-form">
+                    <h1>Choose Your Plan</h1>
+                    <p class="sub-heading">Select the best plan for your viewing pleasure:</p>
+
+                    <!-- Subscription Plan Selection -->
+                    <div class="plans">
+                        <div class="plan" id="basic-plan">
+                            <input type="radio" id="basic" name="plan" value="Basic" checked>
+                            <label for="basic">
+                                <h3>Basic</h3>
+                                <ul>
+                                    <li>Cost: $7.99/month</li>
+                                    <li>HD Available</li>
+                                    <li>Ultra HD Not Available</li>
+                                    <li>Watch on 1 screen at a time</li>
+                                </ul>
+                            </label>
+                        </div>
+                        <div class="plan" id="standard-plan">
+                            <input type="radio" id="standard" name="plan" value="Standard">
+                            <label for="standard">
+                                <h3>Standard</h3>
+                                <ul>
+                                    <li>Cost: $9.99/month</li>
+                                    <li>HD Available</li>
+                                    <li>Ultra HD Not Available</li>
+                                    <li>Watch on 2 screens at a time</li>
+                                </ul>
+                            </label>
+                        </div>
+                        <div class="plan" id="premium-plan">
+                            <input type="radio" id="premium" name="plan" value="Premium">
+                            <label for="premium">
+                                <h3>Premium</h3>
+                                <ul>
+                                    <li>Cost: $13.99/month</li>
+                                    <li>HD Available</li>
+                                    <li>Ultra HD Available</li>
+                                    <li>Watch on 4 screens at a time</li>
+                                </ul>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Button to Proceed -->
+                    <div class="btn">
+                        <button type="button" class="btn-primary" id="select-plan-button">Proceed to Payment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <footer>
+        <div class="ftr-content">
+            <!-- Added the Questions link here -->
+            <div class="contact">
+                <a href="#">Questions? Contact us.</a>
+            </div>
+            <div class="ftr">
+                <a href="#">Gift Card Terms</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy Statement</a>
+            </div>
+            <div class="select">
+                <select>
+                    <option>English</option>
+                    <option>العربية</option>
+                    <option>Français</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Update the JavaScript code to fix the string interpolation issue in the window.location.href
+        document.getElementById('select-plan-button').addEventListener('click', function() {
+            const selectedPlan = document.querySelector('input[name="plan"]:checked').value;
+            window.location.href = `payment.html?plan=${selectedPlan}`;  // Fixed the template literal with backticks
+        });
+    </script>
+    <script src="pay.js"></script>
+</body>
+</html>

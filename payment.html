@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="payment.css">
+    <title>Payment - Netflix</title>
+</head>
+<body>
+    <header class="showcase">
+        <div class="logo">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240313101431/Netflix-Logo.png" alt="Netflix Logo">
+        </div>
+        <div class="showcase-content">
+            <!-- Payment Form -->
+            <div class="formm">
+                <form id="payment-form">
+                    <h1>Payment Information</h1>
+                    <p id="selected-plan"></p>
+
+                    <!-- Payment Details -->
+                    <div class="info">
+                        <label for="credit-card">Credit Card Number:</label>
+                        <div id="card-error" class="error"></div>
+                        <input type="text" id="credit-card" placeholder="1234 5678 1234 5678">
+
+                        <label for="expiry-date">Expiry Date:</label>
+                        <div id="expiry-error" class="error"></div>
+                        <input type="text" id="expiry-date" placeholder="MM/YY">
+
+                        <label for="cvv">CVV:</label>
+                        <div id="cvv-error" class="error"></div>
+                        <input type="text" id="cvv" placeholder="CVV">
+                    </div>
+
+                    <!-- Pay Now Button -->
+                    <div class="btn">
+                        <button class="btn-primary" type="submit">Pay Now</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <footer>
+        <div class="ftr-content">
+            <div class="contact">
+                <a href="#">Questions? Contact us.</a>
+            </div>
+            <div class="ftr">
+                <a href="#">Gift Card Terms</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy Statement</a>
+            </div>
+            <div class="select">
+                <select>
+                    <option>English</option>
+                    <option>العربية</option>
+                    <option>Français</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get the selected plan from the query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const plan = urlParams.get('plan');
+
+        // Show the selected plan in the payment form
+        document.getElementById('selected-plan').textContent = `You have selected the ${plan} plan. Please enter your payment details below.`;
+
+        // Validation Functions
+        function validateCardNumber(cardNumber) {
+            cardNumber = cardNumber.replace(/\s+/g, ''); // Remove spaces
+            const regex = /^[0-9]{13,19}$/; // Check for 13-19 digits
+            return regex.test(cardNumber);
+        }
+
+        function validateExpiryDate(expiryDate) {
+            const regex = /^(0[1-9]|1[0-2])\/\d{2}$/; // MM/YY format
+            return regex.test(expiryDate);
+        }
+
+        function validateCVV(cvv) {
+            const regex = /^[0-9]{3}$/; // Three digits
+            return regex.test(cvv);
+        }
+
+        // Function to enable/disable Pay Now button based on validation
+        function validateForm() {
+            const cardNumber = document.getElementById('credit-card').value.trim();
+            const expiryDate = document.getElementById('expiry-date').value.trim();
+            const cvv = document.getElementById('cvv').value.trim();
+
+            // Clear previous error messages
+            clearErrors();
+
+            let isValid = true;
+
+            // Validate Credit Card
+            if (!validateCardNumber(cardNumber)) {
+                showError('card-error', 'Invalid credit card number.');
+                isValid = false;
+            }
+
+            // Validate Expiry Date
+            if (!validateExpiryDate(expiryDate)) {
+                showError('expiry-error', 'Invalid expiry date. Use MM/YY format.');
+                isValid = false;
+            }
+
+            // Validate CVV
+            if (!validateCVV(cvv)) {
+                showError('cvv-error', 'Invalid CVV. Please enter a 3-digit number.');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Function to show error messages
+        function showError(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+
+        // Function to clear error messages
+        function clearErrors() {
+            const errorElements = document.querySelectorAll('.error');
+            errorElements.forEach(function (error) {
+                error.textContent = '';
+                error.style.display = 'none';
+            });
+        }
+
+        // Handle form submission
+        document.getElementById('payment-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+            if (validateForm()) {
+                window.location.href = 'main.html';  // Redirect to the main page if all details are correct
+            } else {
+                alert("Please correct the errors in the form before proceeding.");
+            }
+        });
+
+        // Attach event listeners for real-time validation on input changes
+        document.getElementById('credit-card').addEventListener('input', validateForm);
+        document.getElementById('expiry-date').addEventListener('input', validateForm);
+        document.getElementById('cvv').addEventListener('input', validateForm);
+
+    </script>
+</body>
+</html>

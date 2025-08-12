@@ -1,0 +1,211 @@
+/* style.css */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Header Styling */
+header.showcase {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('https://i.redd.it/zjgs096khv591.jpg') no-repeat center center/cover;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .logo img {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 150px;
+    height: 100px;
+}
+
+/* Showcase Content Styling */
+.showcase-content {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 80%;
+    margin: auto;
+}
+
+/* Form Styling */
+.formm {
+    margin-top: 2rem;
+}
+
+.formm h1 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.sub-heading {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.plans {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Plan Styling */
+.plan {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 200px;
+    text-align: left;
+    position: relative;
+}
+
+/* Interactive Effects */
+.plan:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+input[type="radio"]:checked + label {
+    /* background-color: #e50914;  Change to Netflix Red when selected */
+    border: 2px solid #fff;
+    color: #fff; /* Make text white */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Add a glow effect */
+}
+
+/* Plan Details Styling */
+.plan h3 {
+    margin-bottom: 1rem;
+}
+
+.plan ul {
+    list-style: none;
+    font-size: 0.9rem;
+    padding: 0;
+}
+
+.plan li {
+    margin: 0.5rem 0;
+}
+
+.plan label {
+    display: block;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    background-color: #444; /* Default background color */
+    color: #ccc;  /* Default text color */
+    line-height: 1.5;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+/* Hover Effect for Plan Labels */
+.plan label:hover {
+    background-color: #555; /* Slightly brighter on hover */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Button Styling */
+.btn {
+    margin-top: 1.5rem;
+}
+
+.btn-primary {
+    background: #e50914;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Footer Styling */
+footer {
+    background: #111;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+.ftr-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ftr-content a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin: 0 10px;
+}
+
+.ftr-content a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Section */
+.contact {
+    margin-bottom: 1rem;
+}
+
+.contact a {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Footer Language Dropdown */
+.select select {
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+/* Footer adjustments for smaller screens */
+@media (max-width: 768px) {
+    .ftr-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ftr-content a {
+        margin: 5px 0;
+    }
+}

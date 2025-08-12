@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Sign-Up</title>
+    <link rel="stylesheet" href="signup.css">
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        /* Add any other styles as necessary */
+    </style>
+</head>
+<body>
+
+    <!-- Netflix Logo -->
+    <div class="logo-container">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240313101431/Netflix-Logo.png" alt="Netflix Logo">
+    </div>
+
+    <!-- Sign Up Form Container -->
+    <div class="signup-container">
+        <h1>Create Account</h1>
+        <p>Sign up to start your free trial today</p>
+        <form id="signupForm"> <!-- Using ID for JavaScript validation -->
+            <div>
+                <input type="text" id="fullName" placeholder="Full Name" required>
+            </div>
+            <div>
+                <input type="email" id="email" placeholder="Email Address" required>
+            </div>
+            <div>
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <div>
+             <button type="submit"  >Sign Up</button>
+            </div>
+        </form>
+        <div class="footer">
+            <p>Already have an account? <a href="signin.html">Sign In</a></p>
+        </div>
+    </div>
+
+    <script src="signup.js"></script> <!-- Link to external JS file for validation -->
+</body>
+</html>
